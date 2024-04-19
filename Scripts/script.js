@@ -135,7 +135,7 @@ document.getElementById('coupon-apply-btn').addEventListener('click', function (
     couponInput.value = '';
 });
 
-// 
+// confirmation section
 document.getElementById('form-submit-btn').addEventListener('click', function (event) {
     const requiredElements = document.querySelectorAll('input');
 
@@ -149,6 +149,12 @@ document.getElementById('form-submit-btn').addEventListener('click', function (e
 
     if (!allFieldsFilled) {
         alert('Please fill in all required fields.');
+
+        event.preventDefault();
+        return;
+    }
+    if (count === 0) {
+        alert('Please select a seat!');
 
         event.preventDefault();
         return;
