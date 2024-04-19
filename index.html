@@ -148,7 +148,8 @@
                             <div
                                 class="flex items-center justify-center md:justify-end bg-[#1DD10026]  rounded-xl gap-4 mx-auto px-3 py-2 md:mx-0 w-fit">
                                 <img src="images/seat-green.png" alt="">
-                                <p class="text-[#1DD100] font-Inter text-base xl:text-lg font-medium"><Span>40</Span>
+                                <p class="text-[#1DD100] font-Inter text-base xl:text-lg font-medium"><Span
+                                        id="total-seats">40</Span>
                                     Seats
                                     Left
                                 </p>
@@ -214,10 +215,10 @@
                                     class="w-8 opacity-30"></button>
                         </div>
                         <!-- list of seats -->
-                        <div class="my-5 grid grid-cols-2 gap-5 lg:gap-x-20">
+                        <div class="my-5 grid grid-cols-2 gap-5 lg:gap-x-20" id="available-ticket-container">
                             <!-- left side -->
-                            <div class="grid grid-cols-2 gap-3 lg:gap-y-6">
-                                <button class="btn">A1</button>
+                            <div class="grid grid-cols-2 gap-3 lg:gap-y-6" id="available-ticket-door">
+                                <button class="btn" id="A1">A1</button>
                                 <button class="btn">A2</button>
                                 <button class="btn">B1</button>
                                 <button class="btn">B2</button>
@@ -239,7 +240,7 @@
                                 <button class="btn">J2</button>
                             </div>
                             <!-- right side -->
-                            <div class="grid grid-cols-2 gap-3 lg:gap-y-6">
+                            <div class="grid grid-cols-2 gap-3 lg:gap-y-6" id="available-ticket-driver">
                                 <button class="btn">A3</button>
                                 <button class="btn">A4</button>
                                 <button class="btn">B3</button>
@@ -275,45 +276,33 @@
                         <div class="bg-[#F7F8F8] p-5 rounded-3xl">
                             <div
                                 class="flex justify-between items-center font-Inter text-base font-medium text-[#030712]">
-                                <p>Seat <span class="bg-[#1DD100] text-white p-1 rounded-lg">2</span></p>
+                                <p>Seat <span class="bg-[#1DD100] text-white px-2 rounded-lg" id="seat-count">0</span>
+                                </p>
                                 <p>Class</p>
                                 <p>Price</p>
                             </div>
                             <hr class="border-dashed bg-[#03071233] my-4">
                             <!-- list of tickets i selected -->
-                            <div
-                                class="flex justify-between items-center font-Inter text-base font-normal text-[#03071299]">
-                                <div>
-                                    <p>C2</p>
-                                    <p>C3</p>
-                                    <p></p>
-                                    <p></p>
-                                </div>
-                                <div>
-                                    <p>Economy</p>
-                                    <p>Economy</p>
-                                    <p></p>
-                                    <p></p>
-                                </div>
-                                <div>
-                                    <p>550</p>
-                                    <p>550</p>
-                                    <p></p>
-                                    <p></p>
-                                </div>
+                            <div class="" id="seatListContainer">
+                                <!-- sets dynamically value by js -->
+
                             </div>
                             <hr class="border-1 bg-[#03071233] my-3">
                             <div
                                 class="flex justify-between items-center font-Inter text-base font-medium text-[#030712]">
                                 <p>Total Price</p>
-                                <p>BDT <span>1100</span></p>
+                                <p>BDT <span id="total-price">0</span></p>
+                            </div>
+                            <div id="discounted-price-container">
+                                <!-- adding dynamic value by js -->
                             </div>
                             <div
                                 class="flex items-center justify-center border-white border-2 px-4 py-2 bg-white rounded-xl my-4">
-                                <input type="text" placeholder="Have Any Coupon?"
-                                    class=" outline-0 focus:outline-none ">
+                                <input type="text" placeholder="Have Any Coupon?" class=" outline-0 focus:outline-none"
+                                    id="coupon-input">
                                 <button
-                                    class="rounded-xl py-2 px-2 bg-[#1DD100] font-Inter text-base font-semibold text-white">Apply</button>
+                                    class="btn rounded-xl py-2 px-2 bg-[#1DD100] font-Inter text-base font-semibold text-white hover:bg-[#1DD100]"
+                                    id="coupon-apply-btn">Apply</button>
                             </div>
                         </div>
                         <!-- form of ticket booking -->
@@ -376,6 +365,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- JS interactive files -->
+    <script src="Scripts/utility.js"></script>
+    <script src="Scripts/script.js"></script>
 </body>
 
 </html>
