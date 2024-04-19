@@ -109,11 +109,11 @@ document.getElementById('coupon-apply-btn').addEventListener('click', function (
     const couponInputValue = couponInput.value;
 
     let discountedPrice = 0;
-    if (count >= 4 && couponInputValue === 'new15') {
+    if (count >= 4 && couponInputValue === 'NEW15') {
         const discount = (totalPrice * 15 / 100);
         discountedPrice = totalPrice - discount;
     }
-    else if (count >= 4 && couponInputValue === 'couple20') {
+    else if (count >= 4 && couponInputValue === 'Couple20') {
         const discount = (totalPrice * 20 / 100);
         discountedPrice = totalPrice - discount;
     }
